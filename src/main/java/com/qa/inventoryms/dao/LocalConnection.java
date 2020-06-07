@@ -14,7 +14,8 @@ public class LocalConnection extends DatabaseConnection {
 	public void openConnection()  {
 		// TO CHANGE FOR SQL EXCEPTION
 		try {
-			setConnection(DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/", getUsername(), getPassword()));
+			// Don't have a local database - connected remote one 
+			setConnection(DriverManager.getConnection("jdbc:mysql://34.67.87.1:3306/inventorydb", getUsername(), getPassword()));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
