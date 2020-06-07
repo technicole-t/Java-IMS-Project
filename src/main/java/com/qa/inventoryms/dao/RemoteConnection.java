@@ -14,7 +14,7 @@ public class RemoteConnection extends DatabaseConnection {
 	public void openConnection() {
 		// TO CHANGE SQLEXCEPTION LATER
 		try {
-			setConnection(DriverManager.getConnection("jdbc:mysql://34.67.87.1/inventorydb", getUsername(), getPassword()));;
+			setConnection(DriverManager.getConnection("jdbc:mysql://34.67.87.1:3306/inventorydb", getUsername(), getPassword()));;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
