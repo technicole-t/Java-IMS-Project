@@ -1,6 +1,12 @@
 package com.qa.inventoryms.connect;
 
 
+
+import java.sql.SQLException;
+
+import org.apache.log4j.Logger;
+
+import com.qa.inventoryms.services.CustomerSubMenu;
 import com.qa.inventoryms.utils.MenuStarter;
 import com.qa.inventoryms.utils.ScannerUtils;
 
@@ -12,9 +18,11 @@ import com.qa.inventoryms.utils.ScannerUtils;
 
 public class IMS {
 	
+	public static final Logger LOGGER = Logger.getLogger(IMS.class);
+	
 	MenuStarter starter = new MenuStarter();
 	
-	public void start() {
+	public void start() throws SQLException {
 		
 		// method asks the user to put a user-name for personalised message to access switch method
 	
@@ -32,7 +40,7 @@ public class IMS {
 				
 				switch(response) {
 				case "CUSTOMERS":
-					System.out.println("Welcome to customers");
+					new CustomerSubMenu();
 					break;
 				case "ITEMS":
 					System.out.println("Welcome to items");
