@@ -2,48 +2,40 @@ package com.qa.inventoryms.models;
 
 public class OrderlineModel {
 	
-	private int orderline_id = 0; 
-	private int fk_order_id; 
-	private int fk_item_id;
+	private int orderlineID = 0; 
+	private int fkOrderID; 
+	private int fkItemID;
 	
-	
-	public OrderlineModel(int orderline_id, int fk_order_id, int fk_item_id) {
+	public OrderlineModel(int orderlineID, int fkOrderID, int fkItemID) {
 		super();
-		this.orderline_id = orderline_id;
-		this.fk_order_id = fk_order_id;
-		this.fk_item_id = fk_item_id;
+		this.orderlineID = orderlineID;
+		this.fkOrderID = fkOrderID;
+		this.fkItemID = fkItemID;
 	}
 
-	public int getOrderline_id() {
-		return orderline_id;
+	public int getOrderlineID() {
+		return orderlineID;
 	}
 
-
-	public void setOrderline_id(int orderline_id) {
-		this.orderline_id = orderline_id;
+	public void setOrderlineID(int orderlineID) {
+		this.orderlineID = orderlineID;
 	}
 
-
-	public int getFk_order_id() {
-		return fk_order_id;
+	public int getFkOrderID() {
+		return fkOrderID;
 	}
 
-
-	public void setFk_order_id(int fk_order_id) {
-		this.fk_order_id = fk_order_id;
+	public void setFkOrderID(int fkOrderID) {
+		this.fkOrderID = fkOrderID;
 	}
 
-
-	public int getFk_item_id() {
-		return fk_item_id;
+	public int getFkItemID() {
+		return fkItemID;
 	}
 
-
-	public void setFk_item_id(int fk_item_id) {
-		this.fk_item_id = fk_item_id;
-	} 
+	public void setFkItemID(int fkItemID) {
+		this.fkItemID = fkItemID;
+	}
 	
 	
-	
-
 }

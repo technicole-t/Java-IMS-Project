@@ -2,39 +2,42 @@ package com.qa.inventoryms.models;
 
 public class OrderModel {
 	
-	private int order_id = 0; 
-	private int fk_customer_id;
-	private int date_ordered;
+	private int orderID = 0; 
+	private int fkCustomerID;
+	private int dateOrdered;
 	
-	public OrderModel(int order_id, int fk_customer_id, int date_ordered) {
+	public OrderModel(int orderID, int fkCustomerID, int dateOrdered) {
 		super();
-		this.order_id = order_id;
-		this.fk_customer_id = fk_customer_id;
-		this.date_ordered = date_ordered;
+		this.orderID = orderID;
+		this.fkCustomerID = fkCustomerID;
+		this.dateOrdered = dateOrdered;
 	}
 
-	public int getOrder_id() {
-		return order_id;
+	public int getOrderID() {
+		return orderID;
 	}
 
-	public void setOrder_id(int order_id) {
-		this.order_id = order_id;
+	public void setOrderID(int orderID) {
+		this.orderID = orderID;
 	}
 
-	public int getFk_customer_id() {
-		return fk_customer_id;
+	public int getFkCustomerID() {
+		return fkCustomerID;
 	}
 
-	public void setFk_customer_id(int fk_customer_id) {
-		this.fk_customer_id = fk_customer_id;
+	public void setFkCustomerID(int fkCustomerID) {
+		this.fkCustomerID = fkCustomerID;
 	}
 
-	public int getDate_ordered() {
-		return date_ordered;
+	public int getDateOrdered() {
+		return dateOrdered;
 	}
 
-	public void setDate_ordered(int date_ordered) {
-		this.date_ordered = date_ordered;
+	public void setDateOrdered(int dateOrdered) {
+		this.dateOrdered = dateOrdered;
 	}
-
+	
+	
+	
+	
 }
