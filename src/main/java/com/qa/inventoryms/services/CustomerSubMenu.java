@@ -42,6 +42,13 @@ public class CustomerSubMenu  {
 				CustomerModel customerUpdt = new CustomerModel(customerEmail1);
 				customerDaoUpdate.updateCustomer(customerUpdt, newEmail);
 				break;
+			case "DELETE":
+				CustomerDAO customerDaoDelete = new CustomerDAO(databaseConnection);
+				System.out.println("What is the email address of the customer you want to delete?");
+				String customerToDel = ScannerUtils.scanner.nextLine();
+				CustomerModel customerDel = new CustomerModel(customerToDel);
+				customerDaoDelete.deleteCustomer(customerDel);
+				break;
 		}
 			break;
 		
