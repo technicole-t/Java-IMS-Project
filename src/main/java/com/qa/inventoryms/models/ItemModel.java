@@ -2,40 +2,50 @@ package com.qa.inventoryms.models;
 
 public class ItemModel {
 	
-	private int item_id = 0; 
-	private String item_name; 
-	private int item_price;
+	private int itemID = 0; 
+	private String itemName; 
+	private int itemPrice;
 	
-	public ItemModel(int item_id, String item_name, int item_price) {
+	public ItemModel(int itemID, String itemName, int itemPrice) {
 		super();
-		this.item_id = item_id;
-		this.item_name = item_name;
-		this.item_price = item_price;
+		this.itemID = itemID;
+		this.itemName = itemName;
+		this.itemPrice = itemPrice;
 	}
-
-	public int getItem_id() {
-		return item_id;
-	}
-
-	public void setItem_id(int item_id) {
-		this.item_id = item_id;
-	}
-
-	public String getItem_name() {
-		return item_name;
-	}
-
-	public void setItem_name(String item_name) {
-		this.item_name = item_name;
-	}
-
-	public int getItem_price() {
-		return item_price;
-	}
-
-	public void setItem_price(int item_price) {
-		this.item_price = item_price;
-	} 
 	
 
+	public ItemModel(String itemName, int itemPrice) {
+		super();
+		this.itemName = itemName;
+		this.itemPrice = itemPrice;
+	}
+
+
+	public int getItemID() {
+		return itemID;
+	}
+
+	public void setItemID(int itemID) {
+		this.itemID = itemID;
+	}
+
+	public String getItemName() {
+		return itemName;
+	}
+
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+
+	public int getItemPrice() {
+		return itemPrice;
+	}
+
+	public void setItemPrice(int itemPrice) {
+		this.itemPrice = itemPrice;
+	}
+	
+	
+	
+	
 }
