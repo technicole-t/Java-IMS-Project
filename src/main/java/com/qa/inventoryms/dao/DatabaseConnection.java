@@ -56,12 +56,15 @@ public abstract class DatabaseConnection implements Openable, Closeable, Queryab
 	
 	public void sendUpdate(String sql) {
 		Statement statement = null;
+		
 		try {
 			statement = connection.createStatement();
 			statement.executeUpdate(sql);
 			
 		} catch (SQLException e) {
+			e.printStackTrace();
 			throw new SQLStatementException("Could not query with " + sql);
+
 		} finally {
 			try {
 				statement.close();

@@ -2,10 +2,9 @@ package com.qa.inventoryms;
 
 
 
-import java.sql.SQLException;
-
 import org.apache.log4j.Logger;
 
+import com.qa.inventoryms.dao.DatabaseConnection;
 import com.qa.inventoryms.services.CustomerSubMenu;
 import com.qa.inventoryms.utils.MenuStarter;
 import com.qa.inventoryms.utils.ScannerUtils;
@@ -22,21 +21,22 @@ public class IMS {
 	
 	MenuStarter starter = new MenuStarter();
 	
-	public IMS() {
-		
+	private DatabaseConnection databaseConnection;
+	
+	public IMS(DatabaseConnection databaseConnection) {
+		this.databaseConnection = databaseConnection;
 	}
 	
-	public void start() throws SQLException {
+	public void start() {
 		
 		// method asks the user to put a user-name for personalised message to access switch method
 	
 			System.out.println("What is your name? ");
 			MenuStarter.setUsername(ScannerUtils.scanner.nextLine());
 			System.out.println("Hello " + MenuStarter.getUsername() + ", this is an Inventory Management System!\n");
+		
 			
-			boolean on = true; 
-			
-			while (on) {
+			while (true) {
 				System.out.println("You have reached the IMS Main Menu.\nPlease type one of the following to view further options: \n 1. 'CUSTOMERS', \n 2. 'ITEMS', \n 3. 'ORDERS', \n 4. 'EXIT'");
 				// ScannerUtils.scanner.nextLine().toUpperCase();
 				
@@ -44,7 +44,8 @@ public class IMS {
 				
 				switch(response) {
 				case "CUSTOMERS":
-					new CustomerSubMenu();
+					CustomerSubMenu custMenu = new CustomerSubMenu(databaseConnection);
+					custMenu.menu();
 					break;
 				case "ITEMS":
 					System.out.println("Welcome to items");
@@ -53,9 +54,8 @@ public class IMS {
 					System.out.println("Welcome to orders");
 					break;
 				case "EXIT":
-					on = false;
 					System.out.println("Goodbye" + MenuStarter.getUsername() + " Thank you for using this IMS.");
-					break;
+					System.exit(0);
 				}
 				break;
 			}

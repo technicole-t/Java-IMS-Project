@@ -1,7 +1,5 @@
 package com.qa.inventoryms.services;
 
-import java.sql.SQLException;
-
 import com.qa.inventoryms.dao.CustomerDAO;
 import com.qa.inventoryms.dao.DatabaseConnection;
 import com.qa.inventoryms.models.CustomerModel;
@@ -15,7 +13,7 @@ public class CustomerSubMenu  {
 		this.databaseConnection = databaseConnection;
 	}
 
-	public CustomerSubMenu() throws SQLException {
+	public void menu() {
 		
 		System.out.println("Welcome to CUSTOMERS."
 				+ "\nWhich of the following would you like to do?"
@@ -42,14 +40,5 @@ public class CustomerSubMenu  {
 		
 		}
 	}
-
-//switch("random var condition"){
-//    case "x": 
-//        break;
-//    case "y":
-//    default:
-//        break;
-//}
-	
 	
 }

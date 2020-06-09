@@ -18,28 +18,11 @@ public class CustomerDAO {
 			String name = customer.getCustomerName();
 			String email = customer.getCustomerEmail();
 			
-			String sql = "INSERT INTO customers(customerName, customerEmail) values ('"
+			String sql = "INSERT INTO customers(customer_name, customer_email) values ('"
 					+ name + "', '"+ email + "');";
 			databaseConnection.sendUpdate(sql);
 	}
 	
 	
-	// NOT DONE BELOW THIS LINE
-	// ----------------------------------------------------
-//	public void viewAllCustomer(CustomerModel customer) throws SQLException {
-//		String sql = "SELECT * FROM customers";
-//		databaseConnection.sendQuery(sql);
-//	}
-//	
-//	public void updateCustomer(CustomerModel customer) throws SQLException {
-//	//	String sql = "UPDATE users SET";
-//	
-//	}
-//	
-//	public void deletedCustomer() {
-//		
-//	}
-//	
-	
-	
 }
+

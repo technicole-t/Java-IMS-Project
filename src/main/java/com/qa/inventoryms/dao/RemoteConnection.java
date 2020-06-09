@@ -7,7 +7,7 @@ import com.qa.inventoryms.exceptions.ConnectionNotMade;
 
 public class RemoteConnection extends DatabaseConnection {
 
-	public RemoteConnection(String user, String password) throws SQLException {
+	public RemoteConnection(String user, String password) {
 		super(user, password);
 	}
 	
