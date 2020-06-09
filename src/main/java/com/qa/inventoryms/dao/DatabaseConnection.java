@@ -34,23 +34,41 @@ public abstract class DatabaseConnection implements Openable, Closeable, Queryab
 	}
 
 	public ResultSet sendQuery(String sql) {
+		// DO THE SAME AS SEND UPDATE
+		Statement statement = null;
+		ResultSet resultSet = null;
 		try {
-			Statement statement = connection.createStatement();			
-			ResultSet resultSet = statement.executeQuery(sql);
-			statement.close();
+			statement = connection.createStatement();			
+			resultSet = statement.executeQuery(sql);
 			return resultSet;
 		} catch (SQLException e) {
 			throw new SQLStatementException("Could not query with " + sql);
+		} finally {
+			try {
+				statement.close();
+				resultSet.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 	
 	public void sendUpdate(String sql) {
+		Statement statement = null;
 		try {
-			Statement statement = connection.createStatement();
+			statement = connection.createStatement();
 			statement.executeUpdate(sql);
-			statement.close();			
+			
 		} catch (SQLException e) {
 			throw new SQLStatementException("Could not query with " + sql);
+		} finally {
+			try {
+				statement.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 	

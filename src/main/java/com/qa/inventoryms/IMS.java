@@ -1,4 +1,4 @@
-package com.qa.inventoryms.connect;
+package com.qa.inventoryms;
 
 
 
@@ -21,6 +21,10 @@ public class IMS {
 	public static final Logger LOGGER = Logger.getLogger(IMS.class);
 	
 	MenuStarter starter = new MenuStarter();
+	
+	public IMS() {
+		
+	}
 	
 	public void start() throws SQLException {
 		
@@ -56,34 +60,8 @@ public class IMS {
 				break;
 			}
 		}
+	
 	}
 	
-//	Input input = new Input();
-//
-//	public void start() throws SQLException {
-//
-//		System.out.println("Database username: ");
-//		String user = input.getInput();
-//		System.out.println("Database password: ");
-//		String password = input.getInput();
-//
-//		RemoteConnection connection = new RemoteConnection(user, password);
-//		
-//		System.out.println("customer name:");
-//		String name = input.getInput();
-//
-//		System.out.println("customer email:");
-//		String email = input.getInput();
-//
-//		// Models 
-//		CustomerModel customer = new CustomerModel(name, email, 0);
-//		// ----------------------------
-//		
-//		// With the object send it to the DAO and have it do the rest
-//		CustomerDAO customerDAO = new CustomerDAO(connection);
-//		customerDAO.insertCustomer(customer);
-//		
-//		connection.closeConnection();
-//	}
 
 

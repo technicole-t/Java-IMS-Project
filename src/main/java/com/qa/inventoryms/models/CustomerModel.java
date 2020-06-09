@@ -7,14 +7,12 @@ public class CustomerModel {
 	private String customerEmail;
 	
 	public CustomerModel(int customerID, String customerName, String customerEmail) {
-		super();
 		this.customerID = customerID;
 		this.customerName = customerName;
 		this.customerEmail = customerEmail;
 	}
 
 	public CustomerModel(String customerName, String customerEmail) {
-		super();
 		this.customerName = customerName;
 		this.customerEmail = customerEmail;
 	}

@@ -1,4 +1,4 @@
-package com.qa.inventoryms.connect;
+package com.qa.inventoryms;
 
 import java.sql.SQLException;
 
