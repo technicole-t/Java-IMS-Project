@@ -1,5 +1,8 @@
 package com.qa.inventoryms.dao;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import org.apache.log4j.Logger;
 
 import com.qa.inventoryms.models.CustomerModel;
@@ -37,6 +40,30 @@ public class CustomerDAO {
 		String sqlDelete = "DELETE from customers WHERE customer_name = '" + emailOfCustToDel +"';";
 		databaseConnection.sendUpdate(sqlDelete);
 		System.out.println("Customer has successfully been deleted...");
+	}
+	
+	public void readAllCustomers() {
+		ResultSet resultSet;
+		String custEmail, custName;
+		String sqlReadAll = "SELECT * FROM customers;";
+		resultSet = databaseConnection.sendQuery(sqlReadAll);
+		try {
+			while (resultSet.next()) {
+				custName = resultSet.getString("customer_name");
+				custEmail = resultSet.getString("customer_email");
+				System.out.println(custName + custEmail);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				resultSet.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.getStackTrace();
+			}
+		}
 	}
 	
 	

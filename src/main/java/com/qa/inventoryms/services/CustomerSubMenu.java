@@ -49,6 +49,12 @@ public class CustomerSubMenu  {
 				CustomerModel customerDel = new CustomerModel(customerToDel);
 				customerDaoDelete.deleteCustomer(customerDel);
 				break;
+			case "READ ALL":
+				CustomerDAO customerReadAll = new CustomerDAO(databaseConnection);
+				customerReadAll.readAllCustomers();
+				break;
+			default:
+				break;
 		}
 			break;
 		
