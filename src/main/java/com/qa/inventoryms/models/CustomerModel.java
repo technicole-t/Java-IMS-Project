@@ -16,6 +16,12 @@ public class CustomerModel {
 		this.customerName = customerName;
 		this.customerEmail = customerEmail;
 	}
+	
+
+	public CustomerModel(String customerEmail) {
+		super();
+		this.customerEmail = customerEmail;
+	}
 
 	public int getCustomerID() {
 		return customerID;

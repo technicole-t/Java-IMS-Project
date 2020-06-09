@@ -18,9 +18,16 @@ public class CustomerDAO {
 			String name = customer.getCustomerName();
 			String email = customer.getCustomerEmail();
 			
-			String sql = "INSERT INTO customers(customer_name, customer_email) values ('"
+			String sqlInsert = "INSERT INTO customers(customer_name, customer_email) values ('"
 					+ name + "', '"+ email + "');";
-			databaseConnection.sendUpdate(sql);
+			databaseConnection.sendUpdate(sqlInsert);
+	}
+	
+	public void updateCustomer(CustomerModel customer, String updateVal) {
+		String oldEmail = customer.getCustomerEmail();
+		String newEmail = updateVal;
+		String sqlUpdate = "UPDATE customers SET customer_email = ('" + newEmail + "') WHERE customer_email = '" + oldEmail +"';";
+		databaseConnection.sendUpdate(sqlUpdate);
 	}
 	
 	

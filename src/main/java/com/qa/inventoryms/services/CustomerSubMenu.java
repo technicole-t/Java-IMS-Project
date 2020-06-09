@@ -32,8 +32,15 @@ public class CustomerSubMenu  {
 				String customerEmail = ScannerUtils.scanner.nextLine();
 				CustomerModel customer = new CustomerModel(customerName, customerEmail);
 				customerDao.insertCustomer(customer);
-
-			default:
+				break;
+			case "UPDATE":
+				CustomerDAO customerDaoUpdate = new CustomerDAO(databaseConnection);
+				System.out.println("Please enter the old email: ");
+				String customerEmail1 = ScannerUtils.scanner.nextLine();
+				System.out.println("Please enter the new email: ");
+				String newEmail = ScannerUtils.scanner.nextLine();
+				CustomerModel customerUpdt = new CustomerModel(customerEmail1);
+				customerDaoUpdate.updateCustomer(customerUpdt, newEmail);
 				break;
 		}
 			break;
