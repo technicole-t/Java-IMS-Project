@@ -4,20 +4,23 @@ public class ItemModel {
 	
 	private int itemID = 0; 
 	private String itemName; 
-	private int itemPrice;
+	private float itemPrice;
 	
-	public ItemModel(int itemID, String itemName, int itemPrice) {
-		super();
+	public ItemModel(int itemID, String itemName, float itemPrice) {
 		this.itemID = itemID;
 		this.itemName = itemName;
 		this.itemPrice = itemPrice;
 	}
 	
 
-	public ItemModel(String itemName, int itemPrice) {
-		super();
+	public ItemModel(String itemName, float itemPrice) {
 		this.itemName = itemName;
 		this.itemPrice = itemPrice;
+	}
+	
+
+	public ItemModel(String itemName) {
+		this.itemName = itemName;
 	}
 
 
@@ -37,7 +40,7 @@ public class ItemModel {
 		this.itemName = itemName;
 	}
 
-	public int getItemPrice() {
+	public float getItemPrice() {
 		return itemPrice;
 	}
 
