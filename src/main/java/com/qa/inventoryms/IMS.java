@@ -28,7 +28,7 @@ public class IMS {
 		
 			LOGGER.info("You have reached the IMS Main Menu."
 					+ "\nPlease type one of the following to view further options: "
-					+ "\n 1. 'CUSTOMERS', \n 2. 'ITEMS', \n 3. 'ORDERS', \n 4. 'EXIT'");
+					+ "\n 1. CUSTOMERS, \n 2. ITEMS, \n 3. ORDERS, \n 4. EXIT");
 				
 				String response = ScannerUtils.scanner.nextLine().toUpperCase();
 				
@@ -46,7 +46,7 @@ public class IMS {
 					ordersMenu.orderMenu();
 					break;
 				case "EXIT":
-					System.out.println("Goodbye" + MenuStarter.getUsername() + " Thank you for using this IMS.");
+					LOGGER.info("Goodbye" + MenuStarter.getUsername() + " Thank you for using this IMS.");
 					System.exit(0);
 				}
 			}
