@@ -6,6 +6,8 @@ import org.apache.log4j.Logger;
 
 import com.qa.inventoryms.dao.DatabaseConnection;
 import com.qa.inventoryms.services.CustomerSubMenu;
+import com.qa.inventoryms.services.ItemSubMenu;
+import com.qa.inventoryms.services.OrdersSubMenu;
 import com.qa.inventoryms.utils.MenuStarter;
 import com.qa.inventoryms.utils.ScannerUtils;
 
@@ -48,10 +50,12 @@ public class IMS {
 					custMenu.menu();
 					break;
 				case "ITEMS":
-					System.out.println("Welcome to items");
+					ItemSubMenu itemMenu = new ItemSubMenu(databaseConnection);
+					itemMenu.itemMenu();
 					break;
 				case "ORDERS":
-					System.out.println("Welcome to orders");
+					OrdersSubMenu ordersMenu = new OrdersSubMenu(databaseConnection);
+					ordersMenu.orderMenu();
 					break;
 				case "EXIT":
 					System.out.println("Goodbye" + MenuStarter.getUsername() + " Thank you for using this IMS.");

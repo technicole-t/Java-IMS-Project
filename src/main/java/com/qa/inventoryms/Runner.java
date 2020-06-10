@@ -4,8 +4,6 @@ import com.qa.inventoryms.dao.RemoteConnection;
 import com.qa.inventoryms.utils.ScannerUtils;
 
 public class Runner {
-	
-	
 	public static void main(String[] args) {
 		System.out.println("Please enter database username");
 		String uName = ScannerUtils.scanner.nextLine();
