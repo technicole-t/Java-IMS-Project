@@ -1,10 +1,16 @@
 package com.qa.inventoryms.services;
 
+import org.apache.log4j.Logger;
+
 import com.qa.inventoryms.dao.DatabaseConnection;
+import com.qa.inventoryms.dao.OrdersDAO;
+import com.qa.inventoryms.models.OrderModel;
 import com.qa.inventoryms.utils.MenuStarter;
 import com.qa.inventoryms.utils.ScannerUtils;
 
 public class OrdersSubMenu {
+	
+	public static final Logger LOGGER = Logger.getLogger(OrdersSubMenu.class);
 	
 	MenuStarter starter = new MenuStarter();
 	
@@ -16,15 +22,21 @@ public class OrdersSubMenu {
 
 	public void orderMenu() {
 		
-		System.out.println("Welcome to ORDERS."
+		LOGGER.info("Welcome to ORDERS."
 				+ "\nWhich of the following would you like to do?"
-				+ "\n1. ADD \n2.SEE ALL \n3.ADD ITEM TO EXISTING ORDER \n4.DELETE AN ORDER \n5. GET COST OF AN ORDER \n6. DELETE ITEM IN AN ORDER \n7. EXIT");
+				+ "\n1.ADD \n2.SEE ALL \n3.ADD ITEM TO EXISTING ORDER \n4.DELETE AN ORDER \n5.GET COST OF AN ORDER \n6.DELETE ITEM IN AN ORDER \n7.EXIT");
 		String response = ScannerUtils.scanner.nextLine().toUpperCase();
 		
 			switch(response) {
 			case "ADD":
-				
-				//OrdersDAO ordersDao = new OrdersDAO(databaseConnection);
+				OrdersDAO ordersDao = new OrdersDAO(databaseConnection);
+				LOGGER.info("Please enter the ID of the customer making the order (they must already be an IMS customer):");
+				int AddOrderCustID = ScannerUtils.scanner.nextInt();
+				LOGGER.info("Please enter the date of order in format YYYY-MM-DD):");
+				String dateOfOrder = ScannerUtils.scanner.nextLine();
+				//  LocalDate dateOfOrder = new LocalDate(0, 0, 0);
+				OrderModel addOrderCust = new OrderModel(AddOrderCustID, dateOfOrder);
+				ordersDao.addOrder(addOrderCust);
 				break;
 			case "SEE ALL":
 				break;

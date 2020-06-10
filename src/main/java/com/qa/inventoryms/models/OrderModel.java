@@ -4,13 +4,17 @@ public class OrderModel {
 	
 	private int orderID = 0; 
 	private int fkCustomerID;
-	private int dateOrdered;
+	private String dateOrdered;
 	
-	public OrderModel(int orderID, int fkCustomerID, int dateOrdered) {
-		super();
+	public OrderModel(int orderID, int fkCustomerID, String dateOrdered) {
 		this.orderID = orderID;
 		this.fkCustomerID = fkCustomerID;
 		this.dateOrdered = dateOrdered;
+	}
+	
+	public OrderModel(int fkCustomerID, String dateOfOrder) {
+		this.fkCustomerID = fkCustomerID;
+		this.dateOrdered = dateOfOrder;
 	}
 
 	public int getOrderID() {
@@ -29,11 +33,11 @@ public class OrderModel {
 		this.fkCustomerID = fkCustomerID;
 	}
 
-	public int getDateOrdered() {
+	public String getDateOrdered() {
 		return dateOrdered;
 	}
 
-	public void setDateOrdered(int dateOrdered) {
+	public void setDateOrdered(String dateOrdered) {
 		this.dateOrdered = dateOrdered;
 	}
 	

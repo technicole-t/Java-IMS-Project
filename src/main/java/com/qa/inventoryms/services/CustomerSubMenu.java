@@ -21,9 +21,9 @@ public class CustomerSubMenu  {
 
 	public void menu() {
 		
-		System.out.println("Welcome to CUSTOMERS."
+		LOGGER.info("Welcome to CUSTOMERS."
 				+ "\nWhich of the following would you like to do?"
-				+ "\n1.INSERT \n2.READ ALL \n3.UPDATE \n4.DELETE \n5.EXIT ");
+				+ "\n1.INSERT \n2.READ ALL \n3.UPDATE \n4.DELETE \n5.EXIT");
 		String response = ScannerUtils.scanner.nextLine().toUpperCase();
 		
 			switch(response) {
