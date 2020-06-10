@@ -10,7 +10,6 @@ public class SQLStatementException extends RuntimeException {
 	private String message;
 
 	public SQLStatementException(String message) {
-		super();
 		this.message = message;
 	}
 

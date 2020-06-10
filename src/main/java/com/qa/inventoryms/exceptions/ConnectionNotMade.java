@@ -10,7 +10,6 @@ public class ConnectionNotMade extends RuntimeException {
 	private String message;
 
 	public ConnectionNotMade(String message) {
-		super();
 		this.message = message;
 	}
 
