@@ -43,9 +43,9 @@ public class CustomerDAO {
 	}
 	
 	public void readAllCustomers() {
-		ResultSet resultSet;
+		ResultSet resultSet = null;
 		String custEmail, custName;
-		String sqlReadAll = "SELECT * FROM customers;";
+		String sqlReadAll = "SELECT * FROM customers";
 		resultSet = databaseConnection.sendQuery(sqlReadAll);
 		try {
 			while (resultSet.next()) {
@@ -56,16 +56,7 @@ public class CustomerDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} finally {
-			try {
-				resultSet.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.getStackTrace();
-			}
-		}
+		} 
 	}
-	
-	
 }
 
