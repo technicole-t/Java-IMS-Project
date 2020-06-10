@@ -12,8 +12,6 @@ import com.qa.inventoryms.utils.ScannerUtils;
 public class IMS {
 	
 	public static final Logger LOGGER = Logger.getLogger(IMS.class);
-	
-	MenuStarter starter = new MenuStarter();
 
 	private DatabaseConnection databaseConnection;
 	public IMS(DatabaseConnection databaseConnection) {
@@ -48,6 +46,9 @@ public class IMS {
 				case "EXIT":
 					LOGGER.info("Goodbye" + MenuStarter.getUsername() + " Thank you for using this IMS.");
 					System.exit(0);
+					break;
+				default: 
+					break;
 				}
 			}
 		}
