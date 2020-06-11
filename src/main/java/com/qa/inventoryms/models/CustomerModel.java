@@ -16,7 +16,10 @@ public class CustomerModel {
 		this.customerName = customerName;
 		this.customerEmail = customerEmail;
 	}
-	
+
+	public CustomerModel(int customerID) {
+		this.customerID = customerID;
+	}
 
 	public CustomerModel(String customerEmail) {
 		super();

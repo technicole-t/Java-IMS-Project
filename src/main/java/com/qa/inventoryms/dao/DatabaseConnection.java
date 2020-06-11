@@ -27,14 +27,12 @@ public abstract class DatabaseConnection implements Openable, Closeable, Queryab
 		try {
 			connection.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			throw new ConnectionNotMade("Could not close connection");
 		}
 	}
 
 	public ResultSet sendQuery(String sql) {
-		// DO THE SAME AS SEND UPDATE
 		Statement statement = null;
 		ResultSet resultSet = null;
 		try {
@@ -48,7 +46,6 @@ public abstract class DatabaseConnection implements Openable, Closeable, Queryab
 	
 	public void sendUpdate(String sql) {
 		Statement statement = null;
-		
 		try {
 			statement = connection.createStatement();
 			statement.executeUpdate(sql);
@@ -61,7 +58,6 @@ public abstract class DatabaseConnection implements Openable, Closeable, Queryab
 			try {
 				statement.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 
 import com.qa.inventoryms.dao.DatabaseConnection;
 import com.qa.inventoryms.dao.OrdersDAO;
+import com.qa.inventoryms.models.CustomerModel;
 import com.qa.inventoryms.models.OrderModel;
 import com.qa.inventoryms.utils.MenuStarter;
 import com.qa.inventoryms.utils.ScannerUtils;
@@ -32,11 +33,10 @@ public class OrdersSubMenu {
 				OrdersDAO ordersDao = new OrdersDAO(databaseConnection);
 				LOGGER.info("Please enter the ID of the customer making the order (they must already be an IMS customer):");
 				int AddOrderCustID = ScannerUtils.scanner.nextInt();
-				LOGGER.info("Please enter the date of order in format YYYY-MM-DD):");
-				String dateOfOrder = ScannerUtils.scanner.nextLine();
-				//  LocalDate dateOfOrder = new LocalDate(0, 0, 0);
-				OrderModel addOrderCust = new OrderModel(AddOrderCustID, dateOfOrder);
-				ordersDao.addOrder(addOrderCust);
+				int customerID = AddOrderCustID;
+				OrderModel addOrderCust = new OrderModel(AddOrderCustID);
+				CustomerModel customerModel = new CustomerModel(customerID);
+				ordersDao.addOrder(addOrderCust, customerModel);
 				break;
 			case "SEE ALL":
 				break;
@@ -49,11 +49,11 @@ public class OrdersSubMenu {
 			case "GET COST OF AN ORDER":
 				break;
 			case "EXIT":
-				System.out.println("Goodbye" + MenuStarter.getUsername() + " Thank you for using this IMS.");
+				LOGGER.info("Goodbye" + MenuStarter.getUsername() + " Thank you for using this IMS.");
 				System.exit(0);
 			default:
 				break;
-		}
+			}
 		
 		}
 		

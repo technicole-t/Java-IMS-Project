@@ -1,6 +1,5 @@
 package com.qa.inventoryms.utils;
 
-
 public class MenuStarter {
 	
 	private static String username;
@@ -12,6 +11,4 @@ public class MenuStarter {
 	public static void setUsername(String username) {
 		MenuStarter.username = username;
 	} 
-	
-	
 }

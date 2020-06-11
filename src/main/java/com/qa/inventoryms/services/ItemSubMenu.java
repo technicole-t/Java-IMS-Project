@@ -19,7 +19,7 @@ public class ItemSubMenu {
 		this.databaseConnection = databaseConnection;
 	}
 
-public void itemMenu() {
+	public void itemMenu() {
 			
 		System.out.println("Welcome to ITEMS."
 				+ "\nWhich of the following would you like to do?"
@@ -31,7 +31,7 @@ public void itemMenu() {
 				ItemsDAO itemsDao = new ItemsDAO(databaseConnection);
 				LOGGER.info("Please enter the item name: ");
 				String itemName = ScannerUtils.scanner.nextLine();
-				LOGGER.info("Please enter the item price - to 2 decimal places: (e.g. 2.00, 120.75) ");
+				LOGGER.info("Please enter the new item price - to 2 decimal places: (e.g. 2.00, 120.75) ");
 				float itemPrice = ScannerUtils.scanner.nextFloat();
 				ItemModel item = new ItemModel(itemName, itemPrice);
 				itemsDao.insertItem(item);

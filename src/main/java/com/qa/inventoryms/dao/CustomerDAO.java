@@ -36,7 +36,7 @@ public class CustomerDAO {
 	
 	public void deleteCustomer(CustomerModel customer) {
 		String emailOfCustToDel = customer.getCustomerEmail();
-		String sqlDelete = "DELETE from customers WHERE customer_name = '" + emailOfCustToDel +"';";
+		String sqlDelete = "DELETE from customers WHERE customer_email = '" + emailOfCustToDel +"';";
 		databaseConnection.sendUpdate(sqlDelete);
 		LOGGER.info("Customer has successfully been deleted...");
 	}
